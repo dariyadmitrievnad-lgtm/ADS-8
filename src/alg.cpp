@@ -6,6 +6,7 @@
 #include <cctype>
 #include <algorithm>
 #include <vector>
+#include <string>
 
 #include "bst.h"
 
@@ -23,7 +24,6 @@ void makeTree(BST<std::string>& tree, const char* filename) {
     while (file.get(ch)) {
         if ((ch >= 'A' && ch <= 'Z') ||
             (ch >= 'a' && ch <= 'z')) {
-
             word += static_cast<char>(
                 std::tolower(static_cast<unsigned char>(ch)));
         } else {
