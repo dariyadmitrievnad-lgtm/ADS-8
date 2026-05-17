@@ -43,13 +43,13 @@ class BST {
         }
     }
 
-    bool search(Node* node, const T& value) const {
+    int search(Node* node, const T& value) const {
         if (node == nullptr) {
-            return false;
+            return 0;
         }
 
         if (value == node->key) {
-            return true;
+            return node->count;
         }
 
         if (value < node->key) {
@@ -61,7 +61,7 @@ class BST {
 
     int depth(Node* node) const {
         if (node == nullptr) {
-            return 0;
+            return -1;
         }
 
         int left_depth = depth(node->left);
@@ -107,7 +107,7 @@ class BST {
         insert(&root, value);
     }
 
-    bool search(const T& value) const {
+    int search(const T& value) const {
         return search(root, value);
     }
 
